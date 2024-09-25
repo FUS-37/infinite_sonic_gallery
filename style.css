@@ -73,6 +73,7 @@ margin-bottom: 20px; /* 在手机上将图片的下边距设置为50% */
 .content .section p {
     margin: 10px;
 }
+
 /* 按钮设置 */
 .content .section a {
     width: 150px;
@@ -89,6 +90,7 @@ margin-bottom: 20px; /* 在手机上将图片的下边距设置为50% */
 .content .section a:hover {
     background-color: #3b6a90; /* 设置按钮悬停时的背景颜色 */
 }
+
 /* banner设置 */
 .banner {
     width: 100%;
@@ -176,4 +178,13 @@ from, to { border-color: transparent }
     width: 100%;
     height: 100%;
     z-index: -1; /* 确保背景图片在文字后面 */
+}
+
+/* 图片悬停 */
+.playPauseButton {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.playPauseButton:hover {
+    opacity: 0.6;
 }
