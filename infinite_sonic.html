@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>infinite sonic | 作品集</title>
-    <link rel="shortcut icon" href="https://fus-37.github.io/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="******" type="image/x-icon">
 </head>
 
 <body>
@@ -17,7 +17,8 @@
 
     <div class="content">
         <div class="section">
-            <img src="https://w3svwsauq3bn5lj.oss-cn-beijing.aliyuncs.com/img/WIINTER.png" alt="Winter" loading="lazy">
+            <img id="playPauseButton3" class="playPauseButton" src="https://w3svwsauq3bn5lj.oss-cn-beijing.aliyuncs.com/img/WIINTER.png" alt="Winter" style="cursor: pointer;" loading="lazy" data-audio>
+            <audio id="audio3" src="https://w3svwsauq3bn5lj.oss-cn-beijing.aliyuncs.com/mp3/winter.mp3" preload="none"></audio>
             <div class="text">
                 <h2>Winter</h2>
                 <p></p>
@@ -26,14 +27,15 @@
                 <p>封面 | 蔚山</p>
                 <p>母带 | FUS是福斯捏</p>
                 <p></p>
-                <a href="https://example.com">Listen Now</a>
+                <a href="https://example.com">Learn More</a>
             </div>
         </div>
     </div>
 
     <div class="content">
         <div class="section">
-            <img src="https://w3svwsauq3bn5lj.oss-cn-beijing.aliyuncs.com/img/hydrangea%20haze.png" alt="hydrangea_haze" loading="lazy">
+            <img id="playPauseButton2" class="playPauseButton" src="https://w3svwsauq3bn5lj.oss-cn-beijing.aliyuncs.com/img/hydrangea%20haze.png" alt="Winter" style="cursor: pointer;" loading="lazy">
+            <audio id="audio2" src="https://w3svwsauq3bn5lj.oss-cn-beijing.aliyuncs.com/mp3/hydrangea%20haze.mp3" preload="none"></audio>
             <div class="text">
                 <h2>hydrangea_haze</h2>
                 <p></p>
@@ -42,14 +44,15 @@
                 <p>封面 | 蔚山</p>
                 <p>母带 | FUS是福斯捏</p>
                 <p></p>
-                <a href="https://example.com">Listen Now</a>
+                <a href="https://example.com">Learn More</a>
             </div>
         </div>
     </div>
 
     <div class="content">
         <div class="section">
-            <img src="https://w3svwsauq3bn5lj.oss-cn-beijing.aliyuncs.com/img/%E9%9D%92%E5%B2%9A.png" alt="青岚" loading="lazy">
+            <img id="playPauseButton1" class="playPauseButton" src="https://w3svwsauq3bn5lj.oss-cn-beijing.aliyuncs.com/img/%E9%9D%92%E5%B2%9A.png" alt="青岚" style="cursor: pointer;" loading="lazy">
+            <audio id="audio1" src="https://w3svwsauq3bn5lj.oss-cn-beijing.aliyuncs.com/mp3/%E9%9D%92%E5%B2%9A.mp3" preload="none"></audio>
             <div class="text">
                 <h2>青岚</h2>
                 <p></p>
@@ -58,7 +61,7 @@
                 <p>封面 | 鲨plus</p>
                 <p>母带 | FUS是福斯捏</p>
                 <p></p>
-                <a href="https://example.com">Listen Now</a>
+                <a href="https://example.com">Learn More</a>
             </div>
         </div>
     </div>
@@ -112,6 +115,20 @@
                     });
             });
         }
+
+        /*音频播放*/
+        const buttons = document.querySelectorAll('img[id^="playPauseButton"]');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const audioId = button.id.replace('playPauseButton', 'audio');
+                const audio = document.getElementById(audioId);
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+        });
     </script>
 
 </body>
